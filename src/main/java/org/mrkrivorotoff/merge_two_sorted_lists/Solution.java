@@ -11,13 +11,13 @@ class Solution {
         final var rootNode = getCandidateToAppend(list1, list2);
         if (rootNode == null) return null;
 
+        var candidateToPostpone = (rootNode == list1) ? list2 : list1;
         var currentNode = rootNode;
-        var candidateToPostpone = rootNode == list1 ? list2 : list1;
         while (true) {
-            var candidateToAppend = getCandidateToAppend(currentNode.next, candidateToPostpone);
+            final var candidateToAppend = getCandidateToAppend(currentNode.next, candidateToPostpone);
             if (candidateToAppend == null)
                 break;
-            candidateToPostpone = candidateToAppend == currentNode.next ? candidateToPostpone : currentNode.next;
+            candidateToPostpone = (candidateToAppend == currentNode.next) ? candidateToPostpone : currentNode.next;
             currentNode.next = candidateToAppend;
             currentNode = currentNode.next;
         }
@@ -28,24 +28,24 @@ class Solution {
     private static ListNode mergeTwoListsToNewList(ListNode list1, ListNode list2) {
         final var rootNode = getCandidateToAppend(list1, list2);
         if (rootNode == null) return null;
-        final var resultRootNode = new ListNode(rootNode.val);
+        final var newList = new ListNode(rootNode.val);
 
-        var resultNode = resultRootNode;
         var node1 = rootNode.next;
-        var node2 = rootNode == list1 ? list2 : list1;
+        var node2 = (rootNode == list1) ? list2 : list1;
+        var currentNode = newList;
         while (true) {
             final var candidate = getCandidateToAppend(node1, node2);
             if (candidate == null)
                 break;
-            if (node1 == candidate)
+            if (candidate == node1)
                 node1 = node1.next;
             else
                 node2 = node2.next;
-            resultNode.next = new ListNode(candidate.val);
-            resultNode = resultNode.next;
+            currentNode.next = new ListNode(candidate.val);
+            currentNode = currentNode.next;
         }
 
-        return resultRootNode;
+        return newList;
     }
 
     private static ListNode getCandidateToAppend(ListNode node1, ListNode node2) {
