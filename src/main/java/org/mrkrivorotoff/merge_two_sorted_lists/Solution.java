@@ -15,7 +15,8 @@ class Solution {
         var candidateToPostpone = rootNode == list1 ? list2 : list1;
         while (true) {
             var candidateToAppend = getCandidateToAppend(currentNode.next, candidateToPostpone);
-            if (candidateToAppend == null) break;
+            if (candidateToAppend == null)
+                break;
             candidateToPostpone = candidateToAppend == currentNode.next ? candidateToPostpone : currentNode.next;
             currentNode.next = candidateToAppend;
             currentNode = currentNode.next;
@@ -34,9 +35,12 @@ class Solution {
         var node2 = rootNode == list1 ? list2 : list1;
         while (true) {
             final var candidate = getCandidateToAppend(node1, node2);
-            if (candidate == null) break;
-            if (node1 == candidate) node1 = node1.next;
-            else node2 = node2.next;
+            if (candidate == null)
+                break;
+            if (node1 == candidate)
+                node1 = node1.next;
+            else
+                node2 = node2.next;
             resultNode.next = new ListNode(candidate.val);
             resultNode = resultNode.next;
         }
