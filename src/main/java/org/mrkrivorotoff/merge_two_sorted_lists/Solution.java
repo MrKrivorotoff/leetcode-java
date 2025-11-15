@@ -8,7 +8,7 @@ class Solution {
     }
 
     private static ListNode mergeTwoListsByChangingNodes(ListNode list1, ListNode list2) {
-        var rootNode = getCandidateToAppend(list1, list2);
+        final var rootNode = getCandidateToAppend(list1, list2);
         if (rootNode == null) return null;
 
         var currentNode = rootNode;
@@ -33,10 +33,10 @@ class Solution {
         var node1 = rootNode.next;
         var node2 = rootNode == list1 ? list2 : list1;
         while (true) {
-            var candidate = getCandidateToAppend(node1, node2);
+            final var candidate = getCandidateToAppend(node1, node2);
             if (candidate == null) break;
             if (node1 == candidate) node1 = node1.next;
-            else if (node2 == candidate) node2 = node2.next;
+            else node2 = node2.next;
             resultNode.next = new ListNode(candidate.val);
             resultNode = resultNode.next;
         }
