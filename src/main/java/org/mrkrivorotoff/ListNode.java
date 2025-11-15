@@ -43,9 +43,9 @@ public final class ListNode {
         return toString(this);
     }
 
-    public static String toString(ListNode node) {
+    public static String toString(ListNode head) {
         StringJoiner stringJoiner = new StringJoiner(", ", "[", "]");
-        for (; node != null; node = node.next)
+        for (ListNode node = head; node != null; node = node.next)
             stringJoiner.add(Integer.toString(node.val));
         return stringJoiner.toString();
     }
