@@ -33,10 +33,10 @@ final class IterableString implements Iterable<Character> {
 
     @Override
     public Iterator<Character> iterator() {
-        return new StringEnumerator();
+        return new StringIterator();
     }
 
-    private final class StringEnumerator implements Iterator<Character> {
+    private final class StringIterator implements Iterator<Character> {
         private int charIndex = 0;
 
         @Override
