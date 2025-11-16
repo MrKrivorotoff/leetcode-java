@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 
-public class Solution {
+class Solution {
     public boolean canConstruct(String ransomNote, String magazine) {
         final var numberByLetter = new HashMap<Character, Integer>();
         for (var currentLetter : new IterableString(magazine)) {
