@@ -37,7 +37,7 @@ public final class TreeNodeFactory {
         }
     }
 
-    static int getIndexOfNode(int[] steps, int currentStepIndex) {
+    static int getIndexOfNode(final int[] steps, final int currentStepIndex) {
         var base = 0;
         for (int i = 0, offsetIncrement = 1; i <= currentStepIndex; i++, offsetIncrement <<= 1)
             base += offsetIncrement;
