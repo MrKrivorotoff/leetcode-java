@@ -28,13 +28,11 @@ public final class TreeNodeFactory {
         final var value = values[getIndexOfNode(steps, currentStepIndex)];
         if (value == null)
             return null;
-        if (currentStepIndex < steps.length - 1) {
-            final var left = createNode(steps, currentStepIndex + 1, 0, values);
-            final var right = createNode(steps, currentStepIndex + 1, 1, values);
-            return new TreeNode(value, left, right);
-        } else {
+        if (currentStepIndex == steps.length - 1)
             return new TreeNode(value);
-        }
+        final var left = createNode(steps, currentStepIndex + 1, 0, values);
+        final var right = createNode(steps, currentStepIndex + 1, 1, values);
+        return new TreeNode(value, left, right);
     }
 
     static int getIndexOfNode(final int[] steps, final int currentStepIndex) {
