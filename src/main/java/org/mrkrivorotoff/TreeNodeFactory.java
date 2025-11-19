@@ -15,8 +15,8 @@ public final class TreeNodeFactory {
 
     static int getNumberOfLevels(int numberOfValues) {
         var numberOfLevels = 0;
-        for (int i = 0, base = 1; numberOfValues > 0; i++, numberOfLevels++, base <<= 1)
-            numberOfValues -= base;
+        for (var decrement = 1; numberOfValues > 0; numberOfLevels++, decrement <<= 1)
+            numberOfValues -= decrement;
         if (numberOfValues < 0)
             throw new IllegalArgumentException();
         return numberOfLevels;
@@ -29,8 +29,8 @@ public final class TreeNodeFactory {
         if (value == null)
             return null;
         if (currentStepIndex < steps.length - 1) {
-            final TreeNode left = createNode(steps, currentStepIndex + 1, 0, values);
-            final TreeNode right = createNode(steps, currentStepIndex + 1, 1, values);
+            final var left = createNode(steps, currentStepIndex + 1, 0, values);
+            final var right = createNode(steps, currentStepIndex + 1, 1, values);
             return new TreeNode(value, left, right);
         } else {
             return new TreeNode(value);
@@ -38,13 +38,13 @@ public final class TreeNodeFactory {
     }
 
     static int getIndexOfNode(final int[] steps, final int currentStepIndex) {
-        var base = 0;
+        var nodesInPrevLevels = 0;
         for (int i = 0, offsetIncrement = 1; i <= currentStepIndex; i++, offsetIncrement <<= 1)
-            base += offsetIncrement;
+            nodesInPrevLevels += offsetIncrement;
         var currentStepOffset = 0;
         for (int i = currentStepIndex, offsetIncrement = 1; i >= 0; i--, offsetIncrement <<= 1)
             if (steps[i] != 0)
                 currentStepOffset += offsetIncrement;
-        return base + currentStepOffset;
+        return nodesInPrevLevels + currentStepOffset;
     }
 }
