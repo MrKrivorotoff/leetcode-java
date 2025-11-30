@@ -4,24 +4,21 @@ import org.mrkrivorotoff.ListNode;
 
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        var sum = new ListNode();
-        var tempNode = (ListNode)null;
-        for (var digitNode = sum; l1 != null || l2 != null || digitNode.val > 9; digitNode = digitNode.next) {
-            var digitNodeVal = digitNode.val;
+        final var head = new ListNode();
+        var carry = 0;
+        for (var currentNode = head; l1 != null || l2 != null || carry != 0; currentNode = currentNode.next) {
+            var sum = carry;
             if (l1 != null) {
-                digitNodeVal += l1.val;
+                sum += l1.val;
                 l1 = l1.next;
             }
             if (l2 != null) {
-                digitNodeVal += l2.val;
+                sum += l2.val;
                 l2 = l2.next;
             }
-            digitNode.val = digitNodeVal % 10;
-            digitNode.next = new ListNode(digitNodeVal / 10);
-            tempNode = digitNode;
+            carry = sum / 10;
+            currentNode.next = new ListNode(sum % 10);
         }
-        if (tempNode != null && tempNode.next.val == 0)
-            tempNode.next = null;
-        return sum;
+        return head.next;
     }
 }
