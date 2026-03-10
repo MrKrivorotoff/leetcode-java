@@ -1,20 +1,20 @@
 package org.mrkrivorotoff.buildings_with_an_ocean_view;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.RandomAccess;
 
 class Solution {
     public int[] findBuildings(int[] heights) {
-        final var result = new LinkedList<Integer>();
+        final var result = new ArrayList<Integer>(heights.length);
         for (int i = heights.length - 1, maxHeight = 0; i >= 0; i--) {
             final var currHeight = heights[i];
             if (maxHeight < currHeight) {
                 maxHeight = currHeight;
-                result.addFirst(i);
+                result.add(i);
             }
         }
-        return intListToArray(result);
+        return intListToArray(result.reversed());
     }
 
     private static int[] intListToArray(final List<Integer> list) {
