@@ -15,22 +15,22 @@ class SolutionTest {
 
     @Test
     void example1() {
-        final var nums = new int[]{1, 2, 3, 4};
-        final var expected = new int[]{1, 3, 6, 10};
+        var nums = new int[]{1, 2, 3, 4};
+        var expected = new int[]{1, 3, 6, 10};
         assertArrayEquals(expected, solution.runningSum(nums));
     }
 
     @Test
     void example2() {
-        final var nums = new int[]{1, 1, 1, 1, 1};
-        final var expected = new int[]{1, 2, 3, 4, 5};
+        var nums = new int[]{1, 1, 1, 1, 1};
+        var expected = new int[]{1, 2, 3, 4, 5};
         assertArrayEquals(expected, solution.runningSum(nums));
     }
 
     @Test
     void example3() {
-        final var nums = new int[]{3, 1, 2, 10, 1};
-        final var expected = new int[]{3, 4, 6, 16, 17};
+        var nums = new int[]{3, 1, 2, 10, 1};
+        var expected = new int[]{3, 4, 6, 16, 17};
         assertArrayEquals(expected, solution.runningSum(nums));
     }
 }

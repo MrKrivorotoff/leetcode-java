@@ -1,15 +1,15 @@
 package org.mrkrivorotoff;
 
 public final class TreeNodeFactory {
-    private TreeNodeFactory() throws InstantiationException {
-        throw new InstantiationException();
+    private TreeNodeFactory() {
+        throw new AssertionError();
     }
 
-    public static TreeNode ofValues(final Integer... values) {
-        final var valuesLength = values.length;
+    public static TreeNode ofValues(Integer... values) {
+        var valuesLength = values.length;
         if (valuesLength == 0)
             return null;
-        final var steps = new int[getNumberOfLevels(valuesLength) - 1];
+        var steps = new int[getNumberOfLevels(valuesLength) - 1];
         return createNode(steps, -1, -1, values);
     }
 
@@ -25,17 +25,17 @@ public final class TreeNodeFactory {
     static TreeNode createNode(int[] steps, int currentStepIndex, int currentStep, Integer[] values) {
         if (currentStepIndex >= 0)
             steps[currentStepIndex] = currentStep;
-        final var value = values[getIndexOfNode(steps, currentStepIndex)];
+        var value = values[getIndexOfNode(steps, currentStepIndex)];
         if (value == null)
             return null;
         if (currentStepIndex == steps.length - 1)
             return new TreeNode(value);
-        final var left = createNode(steps, currentStepIndex + 1, 0, values);
-        final var right = createNode(steps, currentStepIndex + 1, 1, values);
+        var left = createNode(steps, currentStepIndex + 1, 0, values);
+        var right = createNode(steps, currentStepIndex + 1, 1, values);
         return new TreeNode(value, left, right);
     }
 
-    static int getIndexOfNode(final int[] steps, final int currentStepIndex) {
+    static int getIndexOfNode(int[] steps, int currentStepIndex) {
         var nodesInPrevLevels = 0;
         for (int i = 0, offsetIncrement = 1; i <= currentStepIndex; i++, offsetIncrement <<= 1)
             nodesInPrevLevels += offsetIncrement;

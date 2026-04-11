@@ -4,7 +4,7 @@ import org.mrkrivorotoff.ListNode;
 
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        final var headNode = new ListNode();
+        var headNode = new ListNode();
         var carry = 0;
         for (var currentNode = headNode; l1 != null || l2 != null || carry != 0; currentNode = currentNode.next) {
             var sum = carry;

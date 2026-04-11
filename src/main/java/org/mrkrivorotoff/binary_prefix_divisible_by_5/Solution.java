@@ -5,8 +5,8 @@ import java.util.List;
 
 class Solution {
     public List<Boolean> prefixesDivBy5(int[] nums) {
-        final var numsLength = nums.length;
-        final var result = new ArrayList<Boolean>(numsLength);
+        var numsLength = nums.length;
+        var result = new ArrayList<Boolean>(numsLength);
         for (int i = 0, remain = 0; i < numsLength; i++) {
             remain = ((remain << 1) + nums[i]) % 5;
             result.add(remain == 0);

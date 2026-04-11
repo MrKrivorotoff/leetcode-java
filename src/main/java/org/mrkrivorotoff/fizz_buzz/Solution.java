@@ -10,23 +10,23 @@ class Solution {
         return fizzBuzzUsingSimpleIteration(n);
     }
 
-    private static List<String> fizzBuzzUsingStream(final int number) {
+    private static List<String> fizzBuzzUsingStream(int number) {
         return IntStream
                 .rangeClosed(1, number)
                 .mapToObj(Solution::selectFizzBuzzOrNumber)
                 .collect(Collectors.toList());
     }
 
-    private static List<String> fizzBuzzUsingSimpleIteration(final int number) {
-        final var result = new ArrayList<String>(number);
+    private static List<String> fizzBuzzUsingSimpleIteration(int number) {
+        var result = new ArrayList<String>(number);
         for (var i = 1; i <= number; i++)
             result.add(selectFizzBuzzOrNumber(i));
         return result;
     }
 
-    private static String selectFizzBuzzOrNumber(final int number) {
-        final var divisibleBy3 = number % 3 == 0;
-        final var divisibleBy5 = number % 5 == 0;
+    private static String selectFizzBuzzOrNumber(int number) {
+        var divisibleBy3 = number % 3 == 0;
+        var divisibleBy5 = number % 5 == 0;
 
         if (divisibleBy3 && divisibleBy5)
             return "FizzBuzz";

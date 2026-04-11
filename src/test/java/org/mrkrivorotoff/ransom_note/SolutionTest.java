@@ -16,22 +16,22 @@ class SolutionTest {
 
     @Test
     void example1() {
-        final var ransomNote = "a";
-        final var magazine = "b";
+        var ransomNote = "a";
+        var magazine = "b";
         assertFalse(solution.canConstruct(ransomNote, magazine));
     }
 
     @Test
     void example2() {
-        final var ransomNote = "aa";
-        final var magazine = "ab";
+        var ransomNote = "aa";
+        var magazine = "ab";
         assertFalse(solution.canConstruct(ransomNote, magazine));
     }
 
     @Test
     void example3() {
-        final var ransomNote = "aa";
-        final var magazine = "aab";
+        var ransomNote = "aa";
+        var magazine = "aab";
         assertTrue(solution.canConstruct(ransomNote, magazine));
     }
 }

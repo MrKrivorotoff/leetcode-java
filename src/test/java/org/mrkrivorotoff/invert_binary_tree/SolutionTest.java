@@ -17,21 +17,21 @@ class SolutionTest {
 
     @Test
     void example1() {
-        final var treeRoot = TreeNodeFactory.ofValues(4, 2, 7, 1, 3, 6, 9);
-        final var expected = TreeNodeFactory.ofValues(4, 7, 2, 9, 6, 3, 1);
+        var treeRoot = TreeNodeFactory.ofValues(4, 2, 7, 1, 3, 6, 9);
+        var expected = TreeNodeFactory.ofValues(4, 7, 2, 9, 6, 3, 1);
         assertEquals(expected, solution.invertTree(treeRoot));
     }
 
     @Test
     void example2() {
-        final var treeRoot = TreeNodeFactory.ofValues(2, 1, 3);
-        final var expected = TreeNodeFactory.ofValues(2, 3, 1);
+        var treeRoot = TreeNodeFactory.ofValues(2, 1, 3);
+        var expected = TreeNodeFactory.ofValues(2, 3, 1);
         assertEquals(expected, solution.invertTree(treeRoot));
     }
 
     @Test
     void example3() {
-        final var treeRoot = TreeNodeFactory.ofValues();
+        var treeRoot = TreeNodeFactory.ofValues();
         assertNull(solution.invertTree(treeRoot));
     }
 }

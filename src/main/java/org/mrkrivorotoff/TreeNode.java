@@ -22,8 +22,10 @@ public final class TreeNode {
 
     @Override
     public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        TreeNode treeNode = (TreeNode) o;
+        if (o == this)
+            return true;
+        if (!(o instanceof TreeNode treeNode))
+            return false;
         return val == treeNode.val && Objects.equals(left, treeNode.left) && Objects.equals(right, treeNode.right);
     }
 

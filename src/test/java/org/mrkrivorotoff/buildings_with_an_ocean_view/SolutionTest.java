@@ -15,22 +15,22 @@ class SolutionTest {
 
     @Test
     void example1() {
-        final var nums = new int[]{4, 2, 3, 1};
-        final var expected = new int[]{0, 2, 3};
+        var nums = new int[]{4, 2, 3, 1};
+        var expected = new int[]{0, 2, 3};
         assertArrayEquals(expected, solution.findBuildings(nums));
     }
 
     @Test
     void example2() {
-        final var nums = new int[]{4, 3, 2, 1};
-        final var expected = new int[]{0, 1, 2, 3};
+        var nums = new int[]{4, 3, 2, 1};
+        var expected = new int[]{0, 1, 2, 3};
         assertArrayEquals(expected, solution.findBuildings(nums));
     }
 
     @Test
     void example3() {
-        final var nums = new int[]{1, 3, 2, 4};
-        final var expected = new int[]{3};
+        var nums = new int[]{1, 3, 2, 4};
+        var expected = new int[]{3};
         assertArrayEquals(expected, solution.findBuildings(nums));
     }
 }

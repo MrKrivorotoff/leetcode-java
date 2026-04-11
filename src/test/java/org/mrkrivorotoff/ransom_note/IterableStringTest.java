@@ -9,13 +9,13 @@ import static org.junit.jupiter.api.Assertions.*;
 class IterableStringTest {
     @Test
     void emptyStringHasNext() {
-        final var iterator = new IterableString("").iterator();
+        var iterator = new IterableString("").iterator();
         assertFalse(iterator.hasNext());
     }
 
     @Test
     void emptyStringNextFailure() {
-        final var iterator = new IterableString("").iterator();
+        var iterator = new IterableString("").iterator();
         assertThrows(NoSuchElementException.class, iterator::next);
     }
 
@@ -26,7 +26,7 @@ class IterableStringTest {
 
     @Test
     void simpleStringIterationResult() {
-        final var iterator = new IterableString("Bar").iterator();
+        var iterator = new IterableString("Bar").iterator();
         assertEquals('B', iterator.next());
         assertEquals('a', iterator.next());
         assertEquals('r', iterator.next());

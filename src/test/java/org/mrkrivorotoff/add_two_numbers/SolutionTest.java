@@ -16,25 +16,25 @@ class SolutionTest {
 
     @Test
     void example1() {
-        final var list1 = ListNode.ofValues(2, 4, 3);
-        final var list2 = ListNode.ofValues(5, 6, 4);
-        final var expected = ListNode.ofValues(7, 0, 8);
+        var list1 = ListNode.ofValues(2, 4, 3);
+        var list2 = ListNode.ofValues(5, 6, 4);
+        var expected = ListNode.ofValues(7, 0, 8);
         assertEquals(expected, solution.addTwoNumbers(list1, list2));
     }
 
     @Test
     void example2() {
-        final var list1 = ListNode.ofValues(0);
-        final var list2 = ListNode.ofValues(0);
-        final var expected = ListNode.ofValues(0);
+        var list1 = ListNode.ofValues(0);
+        var list2 = ListNode.ofValues(0);
+        var expected = ListNode.ofValues(0);
         assertEquals(expected, solution.addTwoNumbers(list1, list2));
     }
 
     @Test
     void example3() {
-        final var list1 = ListNode.ofValues(9, 9, 9, 9, 9, 9, 9);
-        final var list2 = ListNode.ofValues(9, 9, 9, 9);
-        final var expected = ListNode.ofValues(8, 9, 9, 9, 0, 0, 0, 1);
+        var list1 = ListNode.ofValues(9, 9, 9, 9, 9, 9, 9);
+        var list2 = ListNode.ofValues(9, 9, 9, 9);
+        var expected = ListNode.ofValues(8, 9, 9, 9, 0, 0, 0, 1);
         assertEquals(expected, solution.addTwoNumbers(list1, list2));
     }
 }

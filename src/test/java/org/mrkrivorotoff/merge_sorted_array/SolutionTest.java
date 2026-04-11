@@ -15,27 +15,27 @@ class SolutionTest {
 
     @Test
     void example1() {
-        final var nums1 = new int[]{1, 2, 3, 0, 0, 0};
-        final var nums2 = new int[]{2, 5, 6};
-        final var expected = new int[]{1, 2, 2, 3, 5, 6};
+        var nums1 = new int[]{1, 2, 3, 0, 0, 0};
+        var nums2 = new int[]{2, 5, 6};
+        var expected = new int[]{1, 2, 2, 3, 5, 6};
         solution.merge(nums1, 3, nums2, 3);
         assertArrayEquals(expected, nums1);
     }
 
     @Test
     void example2() {
-        final var nums1 = new int[]{1};
-        final var nums2 = new int[]{};
-        final var expected = new int[]{1};
+        var nums1 = new int[]{1};
+        var nums2 = new int[]{};
+        var expected = new int[]{1};
         solution.merge(nums1, 1, nums2, 0);
         assertArrayEquals(expected, nums1);
     }
 
     @Test
     void example3() {
-        final var nums1 = new int[]{0};
-        final var nums2 = new int[]{1};
-        final var expected = new int[]{1};
+        var nums1 = new int[]{0};
+        var nums2 = new int[]{1};
+        var expected = new int[]{1};
         solution.merge(nums1, 0, nums2, 1);
         assertArrayEquals(expected, nums1);
     }

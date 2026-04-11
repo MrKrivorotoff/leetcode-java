@@ -2,7 +2,7 @@ package org.mrkrivorotoff.make_sum_divisible_by_p;
 
 class Solution {
     public int minSubarray(int[] nums, int p) {
-        final var numsLength = nums.length;
+        var numsLength = nums.length;
         var totalSum = 0L;
         for (var num : nums)
             totalSum += num;

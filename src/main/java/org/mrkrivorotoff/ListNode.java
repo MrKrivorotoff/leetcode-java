@@ -20,7 +20,7 @@ public final class ListNode {
     }
 
     public static ListNode ofValues(int... values) {
-        ListNode current = null;
+        var current = (ListNode) null;
         for (var i = values.length - 1; i >= 0; i--)
             current = new ListNode(values[i], current);
         return current;
@@ -28,8 +28,10 @@ public final class ListNode {
 
     @Override
     public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        ListNode listNode = (ListNode) o;
+        if (o == this)
+            return true;
+        if (!(o instanceof ListNode listNode))
+            return false;
         return val == listNode.val && Objects.equals(next, listNode.next);
     }
 
@@ -44,8 +46,8 @@ public final class ListNode {
     }
 
     public static String toString(ListNode head) {
-        StringJoiner stringJoiner = new StringJoiner(", ", "[", "]");
-        for (ListNode node = head; node != null; node = node.next)
+        var stringJoiner = new StringJoiner(", ", "[", "]");
+        for (var node = head; node != null; node = node.next)
             stringJoiner.add(Integer.toString(node.val));
         return stringJoiner.toString();
     }

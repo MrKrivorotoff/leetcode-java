@@ -16,13 +16,13 @@ class SolutionTest {
 
     @Test
     void example1() {
-        final var nums = new int[]{1, 0, 0, 0, 1, 0, 0, 1};
+        var nums = new int[]{1, 0, 0, 0, 1, 0, 0, 1};
         assertTrue(solution.kLengthApart(nums, 2));
     }
 
     @Test
     void example2() {
-        final var nums = new int[]{1, 0, 0, 1, 0, 1};
+        var nums = new int[]{1, 0, 0, 1, 0, 1};
         assertFalse(solution.kLengthApart(nums, 2));
     }
 }

@@ -17,36 +17,36 @@ class SolutionTest {
 
     @Test
     void example1() {
-        final var nums = new int[]{0, 1, 1};
-        final var expected = List.of(true, false, false);
+        var nums = new int[]{0, 1, 1};
+        var expected = List.of(true, false, false);
         assertEquals(expected, solution.prefixesDivBy5(nums));
     }
 
     @Test
     void example2() {
-        final var nums = new int[]{1, 1, 1};
-        final var expected = List.of(false, false, false);
+        var nums = new int[]{1, 1, 1};
+        var expected = List.of(false, false, false);
         assertEquals(expected, solution.prefixesDivBy5(nums));
     }
 
     @Test
     void additionalTestCase1() {
-        final var nums = new int[]{1, 1, 0, 0, 0, 1, 0, 0, 1};
-        final var expected = List.of(false, false, false, false, false, false, false, false, false);
+        var nums = new int[]{1, 1, 0, 0, 0, 1, 0, 0, 1};
+        var expected = List.of(false, false, false, false, false, false, false, false, false);
         assertEquals(expected, solution.prefixesDivBy5(nums));
     }
 
     @Test
     void additionalTestCase2() {
-        final var nums = new int[]{1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1};
-        final var expected = List.of(false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, true, true, true, true, false);
+        var nums = new int[]{1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1};
+        var expected = List.of(false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, true, true, true, true, false);
         assertEquals(expected, solution.prefixesDivBy5(nums));
     }
 
     @Test
     void additionalTestCase3() {
-        final var nums = new int[]{1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0};
-        final var expected = List.of(false, false, true, false, false, false, false, false, false, false, true, true, true, true, true, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, true, false, false, true, false, false, true, true, true, true, true, true, true, false, false, true, false, false, false, false, true, true);
+        var nums = new int[]{1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0};
+        var expected = List.of(false, false, true, false, false, false, false, false, false, false, true, true, true, true, true, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, true, false, false, true, false, false, true, true, true, true, true, true, true, false, false, true, false, false, false, false, true, true);
         assertEquals(expected, solution.prefixesDivBy5(nums));
     }
 }

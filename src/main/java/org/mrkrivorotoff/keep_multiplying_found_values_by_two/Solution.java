@@ -8,8 +8,8 @@ class Solution {
         return findFinalValueUsingHashSet(nums, original);
     }
 
-    private static int findFinalValueUsingHashSet(final int[] nums, int original) {
-        final var setOfNums = new HashSet<Integer>();
+    private static int findFinalValueUsingHashSet(int[] nums, int original) {
+        var setOfNums = new HashSet<Integer>();
         for (var num : nums)
             setOfNums.add(num);
         while (setOfNums.contains(original))
@@ -17,7 +17,7 @@ class Solution {
         return original;
     }
 
-    private static int findFinalValueUsingSorting(final int[] nums, int original) {
+    private static int findFinalValueUsingSorting(int[] nums, int original) {
         Arrays.sort(nums);
         for (var num : nums)
             if (original == num)

@@ -7,13 +7,13 @@ import java.util.Objects;
 
 class Solution {
     public boolean canConstruct(String ransomNote, String magazine) {
-        final var numberByLetter = new HashMap<Character, Integer>();
+        var numberByLetter = new HashMap<Character, Integer>();
         for (var currentLetter : new IterableString(magazine)) {
-            final int number = numberByLetter.getOrDefault(currentLetter, 0);
+            int number = numberByLetter.getOrDefault(currentLetter, 0);
             numberByLetter.put(currentLetter, number + 1);
         }
         for (var currentLetter : new IterableString(ransomNote)) {
-            final int number = numberByLetter.getOrDefault(currentLetter, 0);
+            int number = numberByLetter.getOrDefault(currentLetter, 0);
             if (number == 0)
                 return false;
             numberByLetter.put(currentLetter, number - 1);

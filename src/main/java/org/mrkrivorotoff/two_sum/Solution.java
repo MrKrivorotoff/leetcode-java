@@ -4,10 +4,9 @@ import java.util.HashMap;
 
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        final var cachedIndexByNum = new HashMap<Integer, Integer>();
-        final var numsLength = nums.length;
-        for (var i = 0; i < numsLength; i++) {
-            final var current = nums[i];
+        var cachedIndexByNum = new HashMap<Integer, Integer>();
+        for (int i = 0, n = nums.length; i < n; i++) {
+            var current = nums[i];
             var cachedIndex = cachedIndexByNum.get(target - current);
             if (cachedIndex != null)
                 return new int[] { cachedIndex, i };

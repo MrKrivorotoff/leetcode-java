@@ -17,24 +17,24 @@ class SolutionTest {
 
     @Test
     void example1() {
-        final var list1 = ListNode.ofValues(1, 2, 4);
-        final var list2 = ListNode.ofValues(1, 3, 4);
-        final var expected = ListNode.ofValues(1, 1, 2, 3, 4, 4);
+        var list1 = ListNode.ofValues(1, 2, 4);
+        var list2 = ListNode.ofValues(1, 3, 4);
+        var expected = ListNode.ofValues(1, 1, 2, 3, 4, 4);
         assertEquals(expected, solution.mergeTwoLists(list1, list2));
     }
 
     @Test
     void example2() {
-        final var list1 = ListNode.ofValues();
-        final var list2 = ListNode.ofValues();
+        var list1 = ListNode.ofValues();
+        var list2 = ListNode.ofValues();
         assertNull(solution.mergeTwoLists(list1, list2));
     }
 
     @Test
     void example3() {
-        final var list1 = ListNode.ofValues();
-        final var list2 = ListNode.ofValues(0);
-        final var expected = ListNode.ofValues(0);
+        var list1 = ListNode.ofValues();
+        var list2 = ListNode.ofValues(0);
+        var expected = ListNode.ofValues(0);
         assertEquals(expected, solution.mergeTwoLists(list1, list2));
     }
 }
