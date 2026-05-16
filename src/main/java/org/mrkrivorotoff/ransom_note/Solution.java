@@ -9,11 +9,11 @@ class Solution {
     public boolean canConstruct(String ransomNote, String magazine) {
         var numberByLetter = new HashMap<Character, Integer>();
         for (var currentLetter : new IterableString(magazine)) {
-            int number = numberByLetter.getOrDefault(currentLetter, 0);
+            var number = numberByLetter.getOrDefault(currentLetter, 0);
             numberByLetter.put(currentLetter, number + 1);
         }
         for (var currentLetter : new IterableString(ransomNote)) {
-            int number = numberByLetter.getOrDefault(currentLetter, 0);
+            var number = numberByLetter.getOrDefault(currentLetter, 0);
             if (number == 0)
                 return false;
             numberByLetter.put(currentLetter, number - 1);
@@ -46,9 +46,11 @@ final class IterableString implements Iterable<Character> {
 
         @Override
         public Character next() {
-            if (charIndex >= stringLength)
-                throw new NoSuchElementException();
-            return string.charAt(charIndex++);
+            return (charIndex < stringLength) ? string.charAt(charIndex++) : throwNoSuchElementException();
+        }
+
+        private static <T> T throwNoSuchElementException() {
+            throw new NoSuchElementException();
         }
     }
 }
