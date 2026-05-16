@@ -8,10 +8,8 @@ import java.util.Objects;
 class Solution {
     public boolean canConstruct(String ransomNote, String magazine) {
         var numberByLetter = new HashMap<Character, Integer>();
-        for (var currentLetter : new IterableString(magazine)) {
-            var number = numberByLetter.getOrDefault(currentLetter, 0);
-            numberByLetter.put(currentLetter, number + 1);
-        }
+        for (var currentLetter : new IterableString(magazine))
+            numberByLetter.merge(currentLetter, 1, Integer::sum);
         for (var currentLetter : new IterableString(ransomNote)) {
             var number = numberByLetter.getOrDefault(currentLetter, 0);
             if (number == 0)

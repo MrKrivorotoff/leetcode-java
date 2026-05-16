@@ -30,5 +30,6 @@ class IterableStringTest {
         assertEquals('B', iterator.next());
         assertEquals('a', iterator.next());
         assertEquals('r', iterator.next());
+        assertFalse(iterator.hasNext());
     }
 }
