@@ -46,7 +46,7 @@ final class IterableString implements Iterable<Character> {
 
         @Override
         public Character next() {
-            return (charIndex < stringLength) ? string.charAt(charIndex++) : throwNoSuchElementException();
+            return charIndex < stringLength ? string.charAt(charIndex++) : throwNoSuchElementException();
         }
 
         private static <T> T throwNoSuchElementException() {
