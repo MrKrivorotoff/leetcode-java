@@ -1,4 +1,4 @@
-package org.mrkrivorotoff.ransom_note;
+package org.mrkrivorotoff;
 
 import org.junit.jupiter.api.Test;
 
