@@ -15,13 +15,13 @@ class SolutionTest {
     }
 
     @Test
-    void example1() {
+    void testExample1() {
         var bits = new int[]{1, 0, 0};
         assertTrue(solution.isOneBitCharacter(bits));
     }
 
     @Test
-    void example2() {
+    void testExample2() {
         var bits = new int[]{1, 1, 1, 0};
         assertFalse(solution.isOneBitCharacter(bits));
     }
